@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BFC: crispy fried chicken, burgers, wings and combo deals in Chattogram. Order online for pickup or delivery.">
+  <title>BFC | Crispy Fried Chicken, Chattogram</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Hind+Siliguri:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { crimson: '#D62828', sun: '#FFC93C', coal: '#1B1B1B', paper: '#FFF8F0' },
+      fontFamily: { display: ['"Bricolage Grotesque"', '"Hind Siliguri"', 'system-ui', 'sans-serif'], body: ['"Hind Siliguri"', 'system-ui', 'sans-serif'] }
+    } } }
+  </script>
+  <style>
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } * { transition: none !important; animation: none !important; } }
+    @keyframes bounce-in { 0% { transform: scale(.85) rotate(-6deg); } 100% { transform: scale(1) rotate(0); } }
+    .bounce-in { animation: bounce-in .6s ease-out both; }
+  </style>
+</head>
+<body class="bg-paper text-coal font-body text-lg leading-relaxed antialiased pb-24">
+
+  <a href="#menu" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-sun focus:p-3">Skip to menu</a>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-crimson text-white shadow-lg">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-5 py-3" aria-label="Main navigation">
+      <a href="#home" class="font-display font-extrabold text-4xl tracking-tighter hover:text-sun transition" aria-label="BFC home">BFC</a>
+      <ul class="hidden md:flex gap-8 font-display font-semibold">
+        <li><a class="border-b-2 border-transparent hover:border-sun hover:text-sun transition pb-1" href="#home">Home</a></li>
+        <li><a class="border-b-2 border-transparent hover:border-sun hover:text-sun transition pb-1" href="#deals">Deals</a></li>
+        <li><a class="border-b-2 border-transparent hover:border-sun hover:text-sun transition pb-1" href="#menu">Menu</a></li>
+        <li><a class="border-b-2 border-transparent hover:border-sun hover:text-sun transition pb-1" href="#about">About</a></li>
+        <li><a class="border-b-2 border-transparent hover:border-sun hover:text-sun transition pb-1" href="#reviews">Reviews</a></li>
+      </ul>
+      <a href="#order" class="hidden md:inline-block bg-sun text-coal font-display font-bold px-5 py-2 rounded-full hover:bg-white hover:scale-105 transition">Order now</a>
+      <button id="menu-btn" class="md:hidden p-2 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-sun" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+    <ul id="mobile-menu" class="hidden md:hidden px-5 pb-4 font-display font-semibold border-t border-white/20">
+      <li><a class="block py-3 hover:text-sun" href="#home">Home</a></li>
+      <li><a class="block py-3 hover:text-sun" href="#deals">Deals</a></li>
+      <li><a class="block py-3 hover:text-sun" href="#menu">Menu</a></li>
+      <li><a class="block py-3 hover:text-sun" href="#about">About</a></li>
+      <li><a class="block py-3 hover:text-sun" href="#reviews">Reviews</a></li>
+      <li><a class="block py-3 text-sun" href="#order">Order now</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="bg-crimson text-white overflow-hidden">
+      <div class="max-w-6xl mx-auto px-5 py-14 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="font-display font-semibold text-sun">গরম, ক্রিস্পি, প্রতিদিন &middot; Open 10 AM to 12 AM</p>
+          <h1 class="mt-3 font-display font-extrabold text-5xl md:text-7xl leading-[1.02] tracking-tight">Crunch you can hear across the table.</h1>
+          <p class="mt-5 max-w-md text-white/90">Fried fresh every batch with our secret spice mix. Pick up in Chattogram or get it delivered hot.</p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#menu" class="bg-sun text-coal font-display font-bold px-7 py-3 rounded-full hover:bg-white hover:scale-105 active:scale-95 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-white/70">Browse menu</a>
+            <a href="#deals" class="border-2 border-white font-display font-bold px-7 py-3 rounded-full hover:bg-white hover:text-crimson transition focus:outline-none focus-visible:ring-4 focus-visible:ring-white/70">See deals</a>
+          </div>
+        </div>
+        <div class="relative mx-auto w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96" aria-hidden="true">
+          <div class="absolute inset-0 rounded-full bg-sun"></div>
+          <div class="absolute inset-6 rounded-full bg-white flex items-center justify-center text-8xl md:text-9xl bounce-in">🍗</div>
+          <div class="absolute -bottom-3 -left-2 bg-coal text-white font-display font-bold rounded-2xl px-4 py-3 -rotate-6 shadow-xl text-base">8pc Bucket<br><span class="text-sun" id="hero-price"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEALS -->
+    <section id="deals" class="max-w-6xl mx-auto px-5 py-16">
+      <h2 class="font-display font-extrabold text-4xl md:text-5xl tracking-tight">Combo deals</h2>
+      <p class="mt-2 max-w-xl">Bundles that cost less than ordering each item alone.</p>
+      <div id="deal-grid" class="mt-8 grid md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="bg-white py-16">
+      <div class="max-w-6xl mx-auto px-5">
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl tracking-tight">Menu</h2>
+        <p class="mt-2 max-w-xl">Pick a category, then tap Add to build your order. Prices are in taka (টাকা).</p>
+        <div id="filters" class="mt-8 flex flex-wrap gap-3" role="group" aria-label="Filter menu by category"></div>
+        <div id="menu-grid" class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-6xl mx-auto px-5 py-16 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="font-display font-extrabold text-4xl tracking-tight">Why people line up for BFC</h2>
+        <p class="mt-4">BFC started as one counter near GEC Circle in 2015. We still marinate the chicken for 12 hours, bread it by hand, and fry in small batches so nothing sits under a lamp.</p>
+        <p class="mt-4">Every order is packed hot, with sauces and napkins, whether you eat in, take away or get delivery.</p>
+      </div>
+      <dl class="grid grid-cols-3 gap-4 text-center">
+        <div class="bg-crimson text-white rounded-2xl p-5 hover:-translate-y-1 transition"><dd class="font-display font-extrabold text-4xl text-sun">১২</dd><dt class="text-sm mt-1">hour marinade</dt></div>
+        <div class="bg-sun rounded-2xl p-5 hover:-translate-y-1 transition"><dd class="font-display font-extrabold text-4xl text-crimson">৩</dd><dt class="text-sm mt-1">branches</dt></div>
+        <div class="bg-coal text-white rounded-2xl p-5 hover:-translate-y-1 transition"><dd class="font-display font-extrabold text-4xl text-sun">৪.৮</dd><dt class="text-sm mt-1">customer rating</dt></div>
+      </dl>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="bg-sun/30 py-16">
+      <div class="max-w-6xl mx-auto px-5">
+        <h2 class="font-display font-extrabold text-4xl tracking-tight">What customers say</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <figure class="bg-white rounded-2xl p-6 hover:shadow-xl transition"><blockquote>Crispiest chicken in the city, and still hot when it reached my hostel.</blockquote><figcaption class="mt-4 font-display font-bold">Tanvir H.</figcaption></figure>
+          <figure class="bg-white rounded-2xl p-6 hover:shadow-xl transition"><blockquote>The Duo Box is perfect for two. Good portions for the price.</blockquote><figcaption class="mt-4 font-display font-bold">Nusrat J.</figcaption></figure>
+          <figure class="bg-white rounded-2xl p-6 hover:shadow-xl transition"><blockquote>Spicy Crunch Burger is my Friday habit. Never disappoints.</blockquote><figcaption class="mt-4 font-display font-bold">Arif M.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORDER -->
+    <section id="order" class="max-w-6xl mx-auto px-5 py-16 grid md:grid-cols-2 gap-12">
+      <div>
+        <h2 class="font-display font-extrabold text-4xl tracking-tight">Your order</h2>
+        <ul id="cart-list" class="mt-6 divide-y divide-coal/10" aria-live="polite"></ul>
+        <p class="mt-4 font-display font-extrabold text-2xl flex justify-between"><span>Total</span><span id="cart-total" class="text-crimson">৳ ০</span></p>
+        <button id="clear-btn" class="mt-4 text-sm underline hover:text-crimson focus:outline-none focus-visible:ring-2 focus-visible:ring-crimson">Clear order</button>
+        <p class="mt-8"><strong class="font-display">Hotline:</strong> <a class="text-crimson underline" href="tel:+8801700000000">+৮৮০ ১৭০০-০০০০০০</a><br><strong class="font-display">Address:</strong> GEC Circle, Chattogram</p>
+      </div>
+      <form id="order-form" class="bg-white rounded-3xl p-8 shadow-lg space-y-5" novalidate>
+        <div><label for="name" class="font-display font-bold block mb-1">Full name</label>
+          <input id="name" required class="w-full border-2 border-coal/20 rounded-lg px-4 py-3 focus:outline-none focus:border-crimson focus:ring-2 focus:ring-sun" placeholder="Your name"></div>
+        <div><label for="phone" class="font-display font-bold block mb-1">Phone number</label>
+          <input id="phone" type="tel" required class="w-full border-2 border-coal/20 rounded-lg px-4 py-3 focus:outline-none focus:border-crimson focus:ring-2 focus:ring-sun" placeholder="01XXXXXXXXX"></div>
+        <div><label for="type" class="font-display font-bold block mb-1">How do you want it?</label>
+          <select id="type" class="w-full border-2 border-coal/20 rounded-lg px-4 py-3 focus:outline-none focus:border-crimson focus:ring-2 focus:ring-sun">
+            <option>Pickup</option><option>Delivery</option><option>Dine in</option></select></div>
+        <p id="form-msg" class="hidden rounded-lg p-3 font-display font-semibold" role="status"></p>
+        <button type="submit" class="w-full bg-crimson text-white font-display font-bold py-3 rounded-full hover:bg-coal active:scale-95 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun">Place order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-coal text-white/80 text-base">
+    <div class="max-w-6xl mx-auto px-5 py-8 flex flex-col sm:flex-row justify-between gap-3">
+      <p>&copy; 2026 BFC. Student project for CSE-2340 Mini Project 2. Not a real business.</p>
+      <a class="hover:text-sun" href="#home">Back to top</a>
+    </div>
+  </footer>
+
+  <!-- Floating cart bar -->
+  <a id="cart-bar" href="#order" class="hidden fixed bottom-4 left-4 right-4 sm:left-auto sm:w-80 z-40 bg-coal text-white rounded-full px-6 py-3 shadow-2xl font-display font-bold flex justify-between items-center hover:bg-crimson transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun">
+    <span id="cart-count">০ items</span><span id="cart-bar-total"></span>
+  </a>
+
+  <script>
+    const bn = n => n.toLocaleString('bn-BD');           // Bangla digits
+    const tk = n => '৳ ' + bn(n);
+
+    // Mobile menu
+    const btn = document.getElementById('menu-btn'), mm = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      const open = mm.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mm.classList.add('hidden'); btn.setAttribute('aria-expanded', false); }));
+
+    // Data
+    const items = [
+      { id: 'c1', n: '1pc Crispy Chicken', c: 'Chicken', p: 165, e: '🍗', d: 'One golden piece, hand-breaded.' },
+      { id: 'c2', n: '2pc Crispy Chicken', c: 'Chicken', p: 310, e: '🍗', d: 'Two pieces with a dip sauce.' },
+      { id: 'c3', n: '4pc Bucket', c: 'Chicken', p: 590, e: '🪣', d: 'Four pieces, perfect for sharing.' },
+      { id: 'c4', n: '8pc Bucket', c: 'Chicken', p: 1090, e: '🪣', d: 'Eight pieces for the whole group.' },
+      { id: 'b1', n: 'Classic Chicken Burger', c: 'Burgers', p: 220, e: '🍔', d: 'Crispy fillet, lettuce and mayo.' },
+      { id: 'b2', n: 'Spicy Crunch Burger', c: 'Burgers', p: 285, e: '🌶', d: 'Hot fillet, pickles and chilli mayo.' },
+      { id: 'b3', n: 'Double Crunch Burger', c: 'Burgers', p: 385, e: '🍔', d: 'Two fillets stacked with cheese.' },
+      { id: 'b4', n: 'Crunch Wrap', c: 'Burgers', p: 240, e: '🌯', d: 'Chicken strips rolled in a soft tortilla.' },
+      { id: 'w1', n: 'Hot Wings (6pc)', c: 'Wings and strips', p: 270, e: '🍖', d: 'Spicy glazed wings.' },
+      { id: 'w2', n: 'Chicken Strips (5pc)', c: 'Wings and strips', p: 330, e: '🥢', d: 'Tender strips with two dips.' },
+      { id: 'w3', n: 'Popcorn Chicken', c: 'Wings and strips', p: 250, e: '🍿', d: 'Bite-size pieces, easy to snack on.' }
+    ];
+    const deals = [
+      { id: 'd1', n: 'Solo Combo', p: 399, e: '🍔', d: 'Spicy Crunch Burger, regular fries and a soft drink.', tag: 'Save ৳ ৬৬' },
+      { id: 'd2', n: 'Duo Box', p: 899, e: '🍗', d: '4 pieces of chicken, 2 fries, 2 drinks.', tag: 'Save ৳ ১৫১' },
+      { id: 'd3', n: 'Family Feast', p: 1699, e: '🪣', d: '8pc bucket, 4 fries, coleslaw, 4 drinks.', tag: 'Save ৳ ৩৪১' }
+    ];
+    const all = [...items, ...deals];
+    document.getElementById('hero-price').textContent = tk(1090);
+
+    // Deals render
+    document.getElementById('deal-grid').innerHTML = deals.map(d => `
+      <article class="bg-crimson text-white rounded-3xl p-7 hover:-translate-y-1 hover:shadow-2xl transition">
+        <div class="flex justify-between items-start"><span class="text-5xl" aria-hidden="true">${d.e}</span><span class="bg-sun text-coal font-display font-bold text-sm rounded-full px-3 py-1">${d.tag}</span></div>
+        <h3 class="font-display font-extrabold text-2xl mt-4">${d.n}</h3>
+        <p class="text-white/90 text-base mt-1">${d.d}</p>
+        <div class="mt-5 flex items-center justify-between"><span class="font-display font-extrabold text-3xl text-sun">${tk(d.p)}</span>
+        <button data-add="${d.id}" class="bg-white text-crimson font-display font-bold px-5 py-2 rounded-full hover:bg-sun hover:text-coal active:scale-95 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun">Add</button></div>
+      </article>`).join('');
+
+    // Menu render and filter
+    const cats = ['All', ...new Set(items.map(i => i.c))];
+    const filters = document.getElementById('filters'), grid = document.getElementById('menu-grid');
+    const base = 'font-display font-bold px-5 py-2 rounded-full border-2 border-crimson transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun ';
+    function render(cat) {
+      filters.innerHTML = cats.map(c => `<button data-cat="${c}" aria-pressed="${c === cat}" class="${base}${c === cat ? 'bg-crimson text-white' : 'text-crimson hover:bg-crimson hover:text-white'}">${c}</button>`).join('');
+      grid.innerHTML = items.filter(i => cat === 'All' || i.c === cat).map(i => `
+        <article class="bg-paper rounded-2xl p-6 border border-coal/10 hover:-translate-y-1 hover:shadow-xl transition">
+          <span class="text-5xl" aria-hidden="true">${i.e}</span>
+          <h3 class="font-display font-bold text-xl mt-3">${i.n}</h3>
+          <p class="text-base mt-1">${i.d}</p>
+          <div class="mt-4 flex items-center justify-between"><span class="font-display font-extrabold text-2xl text-crimson">${tk(i.p)}</span>
+          <button data-add="${i.id}" class="bg-crimson text-white font-display font-bold px-5 py-2 rounded-full hover:bg-coal active:scale-95 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-sun">Add</button></div>
+        </article>`).join('');
+    }
+    filters.addEventListener('click', e => { const b = e.target.closest('button'); if (b) render(b.dataset.cat); });
+    render('All');
+
+    // Cart
+    const cart = {};
+    const list = document.getElementById('cart-list'), bar = document.getElementById('cart-bar');
+    function updateCart() {
+      const ids = Object.keys(cart);
+      const count = ids.reduce((s, id) => s + cart[id], 0);
+      const total = ids.reduce((s, id) => s + cart[id] * all.find(x => x.id === id).p, 0);
+      list.innerHTML = ids.length ? ids.map(id => { const x = all.find(y => y.id === id); return `
+        <li class="py-3 flex items-center justify-between gap-3"><span>${x.n}</span>
+          <span class="flex items-center gap-2">
+            <button data-dec="${id}" class="w-8 h-8 rounded-full bg-coal/10 hover:bg-crimson hover:text-white font-bold" aria-label="Remove one ${x.n}">−</button>
+            <span class="w-6 text-center font-display font-bold">${bn(cart[id])}</span>
+            <button data-add="${id}" class="w-8 h-8 rounded-full bg-coal/10 hover:bg-crimson hover:text-white font-bold" aria-label="Add one ${x.n}">+</button>
+          </span><span class="font-display font-bold w-20 text-right">${tk(cart[id] * x.p)}</span></li>`; }).join('')
+        : '<li class="py-3 text-coal/70">Your order is empty. Add something from the menu.</li>';
+      document.getElementById('cart-total').textContent = tk(total);
+      document.getElementById('cart-count').textContent = bn(count) + (count === 1 ? ' item' : ' items');
+      document.getElementById('cart-bar-total').textContent = tk(total);
+      bar.classList.toggle('hidden', count === 0);
+    }
+    document.addEventListener('click', e => {
+      const a = e.target.closest('[data-add]'), d = e.target.closest('[data-dec]');
+      if (a) { cart[a.dataset.add] = (cart[a.dataset.add] || 0) + 1; updateCart(); }
+      if (d) { const id = d.dataset.dec; if (--cart[id] <= 0) delete cart[id]; updateCart(); }
+    });
+    document.getElementById('clear-btn').addEventListener('click', () => { Object.keys(cart).forEach(k => delete cart[k]); updateCart(); });
+    updateCart();
+
+    // Order form
+    const form = document.getElementById('order-form'), msg = document.getElementById('form-msg');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const name = form.name.value.trim(), phone = form.phone.value.trim();
+      msg.className = 'rounded-lg p-3 font-display font-semibold';
+      if (!Object.keys(cart).length) { msg.textContent = 'Add at least one item before placing your order.'; msg.classList.add('bg-red-100', 'text-red-900'); return; }
+      if (!name || !/^(\+?88)?01\d{9}$/.test(phone)) { msg.textContent = 'Enter your name and a valid Bangladeshi phone number.'; msg.classList.add('bg-red-100', 'text-red-900'); return; }
+      msg.textContent = `Thank you, ${name}. Your ${form.type.value.toLowerCase()} order (${document.getElementById('cart-total').textContent}) is received.`;
+      msg.classList.add('bg-green-100', 'text-green-900');
+      Object.keys(cart).forEach(k => delete cart[k]); updateCart(); form.reset();
+    });
+  </script>
+</body>
+</html>
